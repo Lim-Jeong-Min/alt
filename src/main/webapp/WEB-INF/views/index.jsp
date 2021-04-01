@@ -207,7 +207,7 @@ section {
                 
                 <div class="col-lg-6 pt-4 pt-lg-0" data-aos-delay="200">
                 <br><br><br><br><br>
-                    <p>저희  <b>A.L.T</b> 홈페이지는</p>
+                    <p>저희sadasd  <b>A.L.T</b> 홈페이지는</p>
                     <ul>
                         <li><i class="ri-check-double-line"></i> 신선하고</li>
                         <li><i class="ri-check-double-line"></i> 저렴하고</li>
