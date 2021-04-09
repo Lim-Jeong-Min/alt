@@ -1,27 +1,25 @@
 # alt
-헤더
-![image](https://user-images.githubusercontent.com/81661575/114122161-a9b7c000-992a-11eb-939f-53192a9c6a32.png)
 
-사이드바
-
- ![image](https://user-images.githubusercontent.com/81661575/114121947-4b8add00-992a-11eb-90c5-6b2d8a540f7d.png)
- ![image](https://user-images.githubusercontent.com/81661575/114122006-65c4bb00-992a-11eb-8fc7-9d25af94b12d.png)
- ![image](https://user-images.githubusercontent.com/81661575/114122063-7aa14e80-992a-11eb-906c-edd276736f84.png)
-
--전체 화면 디자인
+*전체 화면 디자인 
 
 부트스트랩을 이용하여 header, footer를 만들었습니다.
 header에는 a 태그를 이용해 A.L.T 인스타그램과 유튜브를 연결해 놓았고 로그아웃 버튼을 만들어 놓았고 Sidebar도 넣었습니다.
 Sidebar에는 회원(회원 목록, 회원 탈퇴 여부, 회원 신고 여부), 업체(업체 목록, 업체 탈퇴 여부, 업체 신고 여부),
 게시판(공지사항, 판매 게시판), 상품 등록 페이지로 넘어가도록 하였습니다.
 
+헤더사진
+![image](https://user-images.githubusercontent.com/81661575/114122161-a9b7c000-992a-11eb-939f-53192a9c6a32.png)
 
-페이지 화면사진
+사이드바 사진
 
-![image](https://user-images.githubusercontent.com/81661575/114122332-061adf80-992b-11eb-930b-dba6211c3fd6.png)
-![image](https://user-images.githubusercontent.com/81661575/114122393-22b71780-992b-11eb-97a7-b268833be295.png)
- 
---페이지 내용
+ ![image](https://user-images.githubusercontent.com/81661575/114121947-4b8add00-992a-11eb-90c5-6b2d8a540f7d.png)
+ ![image](https://user-images.githubusercontent.com/81661575/114122006-65c4bb00-992a-11eb-8fc7-9d25af94b12d.png)
+ ![image](https://user-images.githubusercontent.com/81661575/114122063-7aa14e80-992a-11eb-906c-edd276736f84.png)
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+*페이지 내용
 
 게시판 목록보기는 Controller에서 ModelAndView 객체를 이용하여 데이터를 받아와 JSP 페이지에 표현 언어와 JSTL을 이용하여 <c:forEach> 구문을 사용하여 테이블을 구성하도록 하였습니다.
 게시판 위에는 검색 기능을 추가하여 게시글을 검색할 수 있게 하였으며, 관리자만 등록을 할 수 있고,관리자 아이디가 아니면 관리자 페이지로 안 넘어가게 구성하였습니다.
@@ -38,20 +36,37 @@ PageDTO를 이용하여 게시판의 총 페이지 번호를 나오게 하였습
 복구는 업데이트 쿼리를 사용하여 'N'을 'Y'로 바꿀 수 있습니다. 또한 탈퇴 여부 페이지와 신고 여부 페이지를 따로 만들어 탈퇴한 사람이랑 삭제를 희망하는 사람만 따로 볼 수 있습니다. 또한 삭제를 할 때 작성한 게시글이나 댓글도 삭제 되도록 하였습니다.
 
 
-![image](https://user-images.githubusercontent.com/81661575/114122861-1ed7c500-992c-11eb-91dd-e1f694f82ae6.png)
 
--- 지역 비율 차트
+페이지 화면사진
+
+![image](https://user-images.githubusercontent.com/81661575/114122332-061adf80-992b-11eb-930b-dba6211c3fd6.png)
+![image](https://user-images.githubusercontent.com/81661575/114122393-22b71780-992b-11eb-97a7-b268833be295.png)
+![image](https://user-images.githubusercontent.com/81661575/114124227-ee455a80-992e-11eb-9234-c607f563ca07.png)
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+* 지역 비율 차트
 
 지역별로 경기, 강원, 충청, 전라, 경상, 제주, X 이렇게 7가지로 나누어서 등록된 지역을 평균 내어 비율을 나타나게 설계하였습니다.
 혹시 저장 안 된 지역을 대비하여 X를 만들어 두었습니다. 만든 6개의 지역을 이름 대신 사용할 가상 번호를 부여하여 union all을 이용하여 데이터를 연합하여 사용하여 평균 내서 비율을 나타내였습니다.
 쿼리로 나타낸 데이터는<c:forEach>를 이용해 불러왔습니다.
 
+지역 비율 차트사진
+![image](https://user-images.githubusercontent.com/81661575/114122861-1ed7c500-992c-11eb-91dd-e1f694f82ae6.png)
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+*그래프
+
+업체 수와 회원 수,주문수 매출들을 model로 불러와 <c:forEach>를 이용해 불러와 chart.js를 이용하여 그래프를 만들었습니다.
+월별로 새로 가입한 수와 탈퇴 수를 비교하기 위해 가입수와 탈퇴 수를 한 그래프에 넣었습니다.
+
+그래프사진
 ![image](https://user-images.githubusercontent.com/81661575/114122906-344cef00-992c-11eb-8ad3-a835b921a3a1.png)
 
-----그래프
 
-업체 수와 회원 수를 model로 불러와 <c:forEach>를 이용해 불러와 chart.js를 이용하여 그래프를 만들었습니다.
-월별로 새로 가입한 수와 탈퇴 수를 비교하기 위해 가입수와 탈퇴 수를 한 그래프에 넣었습니다.
 
 
 
